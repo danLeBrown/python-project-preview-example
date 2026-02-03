@@ -31,3 +31,9 @@ app.include_router(admins.router)
 @app.get("/")
 async def root():
     return {"message": "Preview Example API", "docs": "/docs"}
+
+
+@app.get("/pr")
+async def pr_check():
+    """Endpoint for PR/preview checks. Returns 200 when the app is ready to receive requests."""
+    return {"status": "ok", "ready": True}
